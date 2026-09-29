@@ -38,7 +38,7 @@ dependencies {
     implementation(gtnhdev("Eternal-Singularity"))
     implementation(gtnhdev("Universal-Singularities"))
     implementation(gtnhdev("WarpTheory"))
-    implementation(gtnhdev("Mobs-Info"))
+    implementation("com.github.GTNewHorizons:Mobs-Info:0.6.0-GTNH:dev")
     implementation(gtnhdev("Jabba"))
     // Todo 与巫术相关插件问题较大 2.9.+解决
     implementation(gtnhdev("ThaumicTinkerer")) { isTransitive = false }
