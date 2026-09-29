@@ -23,7 +23,7 @@ val Project.isCiEnvironment
 fun gtnhdev(name: String) = elytraModpackVersion.gtnhdev(name)
 
 dependencies {
-    elytraModpackVersion.gtnhVersion = "2.9.0-beta-1"
+    elytraModpackVersion.gtnhVersion = "2.9.0-RC-1"
 
     implementation(gtnhdev("GT5-Unofficial"))
     implementation(gtnhdev("NewHorizonsCoreMod"))
