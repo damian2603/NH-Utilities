@@ -1,6 +1,22 @@
 // Add any additional repositories for your dependencies here.
 
 repositories { handler ->
+    // Railcraft 9.17.36 was released on GitHub, but its Maven publication failed.
+    // Use the official release JAR as an artifact-only Ivy fallback until Nexus is repaired.
+    handler.ivy {
+        name = 'RailcraftGitHubRelease'
+        url = 'https://github.com/GTNewHorizons/Railcraft/releases/download'
+        patternLayout {
+            artifact '[revision]/[artifact]-[revision](-[classifier]).[ext]'
+        }
+        metadataSources {
+            artifact()
+        }
+        content {
+            includeModule('com.github.GTNewHorizons', 'Railcraft')
+        }
+    }
+
     exclusiveContent {
         forRepository {
             handler.maven {
