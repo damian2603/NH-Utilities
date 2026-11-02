@@ -73,11 +73,7 @@ configurations.configureEach {
             // The same artifact versions are available from Maven Central under the relocated group.
             if (
                 target.group == "org.scala-lang" &&
-                target.name in setOf(
-                    "scala-parser-combinators_2.11",
-                    "scala-swing_2.11",
-                    "scala-xml_2.11"
-                )
+                target.name in setOf("scala-parser-combinators_2.11", "scala-swing_2.11", "scala-xml_2.11")
             ) {
                 useTarget("org.scala-lang.modules:${target.name}:${target.version}")
             }
