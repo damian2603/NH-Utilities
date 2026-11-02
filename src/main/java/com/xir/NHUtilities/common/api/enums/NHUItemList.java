@@ -1,5 +1,7 @@
 package com.xir.NHUtilities.common.api.enums;
 
+import static gregtech.GTLoggers.GT_FML_LOGGER;
+
 import java.util.function.Supplier;
 
 import net.minecraft.block.Block;
@@ -17,7 +19,6 @@ import com.xir.NHUtilities.utils.CommonUtil;
 import com.xir.NHUtilities.utils.RegisterUtil;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import gregtech.api.util.GTLog;
 
 @SuppressWarnings({ "unused", "UnusedReturnValue" })
 public enum NHUItemList implements IItemContainer {
@@ -443,8 +444,7 @@ public enum NHUItemList implements IItemContainer {
     public ItemStack get(int aAmount) {
         sanityCheck();
         if (CommonUtil.isStackInvalid(mStack)) {
-            GTLog.out.println("Object in the ItemList is null at:");
-            new NullPointerException().printStackTrace(GTLog.out);
+            GT_FML_LOGGER.error("Object in the ItemList is null at:", new NullPointerException());
             return CommonUtil.aErrorStack();
         }
         return CommonUtil.copyAmount(mStack, aAmount);
@@ -510,7 +510,7 @@ public enum NHUItemList implements IItemContainer {
         if (mHasNotBeenSet)
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (mDeprecated && !mWarned) {
-            new Exception(this + " is now deprecated").printStackTrace(GTLog.err);
+            GT_FML_LOGGER.warn(this + " is now deprecated", new Exception(this + " is now deprecated"));
             mWarned = true;
         }
     }

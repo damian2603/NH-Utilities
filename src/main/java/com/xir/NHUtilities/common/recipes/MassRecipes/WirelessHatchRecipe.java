@@ -63,7 +63,7 @@ public class WirelessHatchRecipe {
             .itemOutputs(NHUItemList.Chip_EnergyModule.get(3))
             .requiresCleanRoom()
             .duration(100 * SECONDS)
-            .eut(TierEU.UHV)
+            .eut(TierEU.RECIPE_UHV)
             .addTo(laserEngraverRecipes);
 
         Predicate<HatchesBoxed> filterEnergy = v -> v.hatchType.equals(HatchType.EnergyHatch);

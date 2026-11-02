@@ -23,7 +23,7 @@ val Project.isCiEnvironment
 fun gtnhdev(name: String) = elytraModpackVersion.gtnhdev(name)
 
 dependencies {
-    elytraModpackVersion.gtnhVersion = "2.9.0-RC-1"
+    elytraModpackVersion.gtnhVersion = "2.9.0"
 
     implementation(gtnhdev("GT5-Unofficial"))
     implementation(gtnhdev("NewHorizonsCoreMod"))
@@ -69,6 +69,15 @@ configurations.configureEach {
     // 强制大部分依赖与elytra-conventions插件提供的版本对齐
     resolutionStrategy {
         eachDependency {
+            // Forge 1.7.10 still requests these Scala modules under the legacy group.
+            // The same artifact versions are available from Maven Central under the relocated group.
+            if (
+                target.group == "org.scala-lang" &&
+                    target.name in setOf("scala-parser-combinators_2.11", "scala-swing_2.11", "scala-xml_2.11")
+            ) {
+                useTarget("org.scala-lang.modules:${target.name}:${target.version}")
+            }
+
             if (target.name in elytraModpackVersion && target.group == gtnhGroup) {
                 useVersion(elytraModpackVersion[target.name]!!)
             }

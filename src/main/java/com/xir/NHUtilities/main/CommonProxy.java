@@ -60,13 +60,13 @@ public class CommonProxy {
 
         LOG.info("Post-initializing " + MOD_NAME + "!");
 
+        ResearchLoader.initNHUtilitiesResearch();
+        LOG.info("Loaded Researches");
+
     }
 
     public void completeInit(FMLLoadCompleteEvent event) {
         LOG.info("Complete-initializing " + MOD_NAME + "!");
-
-        ResearchLoader.initNHUtilitiesResearch();
-        LOG.info("Loaded Researches");
 
         NHURecipes.initNHURecipeCrossMod();
         LOG.info("Loaded NHUtilities Recipe Cross Mod");

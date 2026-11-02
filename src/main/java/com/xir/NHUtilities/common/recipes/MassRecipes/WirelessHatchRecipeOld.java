@@ -448,7 +448,7 @@ public class WirelessHatchRecipeOld {
                         Materials.BorosilicateGlass.getMolten(21 * 144L))
                     .itemOutputs(output[i])
                     .duration(60 * SECONDS)
-                    .eut(TierEU.ZPM)
+                    .eut(TierEU.RECIPE_ZPM)
                     .metadata(PRECISE_ASSEMBLER_CASING_TIER, 1)
                     .addTo(preciseAssemblerRecipes);
             }
