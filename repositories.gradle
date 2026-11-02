@@ -1,22 +1,6 @@
 // Add any additional repositories for your dependencies here.
 
 repositories { handler ->
-    // Forge 1.7.10 publishes these legacy Scala artifacts through SpongePowered,
-    // not Maven Central. Keep the repository exclusive to these three modules.
-    exclusiveContent {
-        forRepository {
-            handler.maven {
-                name = 'SpongePoweredLegacyScala'
-                url = 'https://repo.spongepowered.org/maven/'
-            }
-        }
-        filter {
-            includeModule('org.scala-lang', 'scala-parser-combinators_2.11')
-            includeModule('org.scala-lang', 'scala-swing_2.11')
-            includeModule('org.scala-lang', 'scala-xml_2.11')
-        }
-    }
-
     // Railcraft 9.17.36 was released on GitHub, but its Maven publication failed.
     // Use the official release JAR as an artifact-only Ivy fallback until Nexus is repaired.
     handler.ivy {
