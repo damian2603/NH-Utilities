@@ -1,8 +1,7 @@
 package com.xir.NHUtilities.common.api.enums;
 
-import static gregtech.GTLoggers.GT_FML_LOGGER;
-
 import static com.xir.NHUtilities.config.Config.wirelessHatchMetaIdOffset;
+import static gregtech.GTLoggers.GT_FML_LOGGER;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -15,7 +14,6 @@ import com.xir.NHUtilities.common.api.interfaces.IItemContainer;
 import com.xir.NHUtilities.common.api.interfaces.IRegisterProvider;
 import com.xir.NHUtilities.utils.CommonUtil;
 import com.xir.NHUtilities.utils.RegisterUtil;
-
 
 @SuppressWarnings({ "unused", "UnusedReturnValue" })
 public enum WirelessHatchMore implements IItemContainer {
