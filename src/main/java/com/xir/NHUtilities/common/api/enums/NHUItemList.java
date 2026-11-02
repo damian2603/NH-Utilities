@@ -1,5 +1,7 @@
 package com.xir.NHUtilities.common.api.enums;
 
+import static gregtech.GTLoggers.GT_FML_LOGGER;
+
 import java.util.function.Supplier;
 
 import net.minecraft.block.Block;
@@ -17,7 +19,6 @@ import com.xir.NHUtilities.utils.CommonUtil;
 import com.xir.NHUtilities.utils.RegisterUtil;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import static gregtech.GTLoggers.GT_FML_LOGGER;
 
 @SuppressWarnings({ "unused", "UnusedReturnValue" })
 public enum NHUItemList implements IItemContainer {
